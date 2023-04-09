@@ -9,6 +9,7 @@
     --gray-700: #1A1A1A;
 
     --blue-500: #4e6ede;
+    --blue-600: #254f9a;
     --green-500: #3ea372;
     --red-500: #de4e4e;
 }
@@ -24,6 +25,7 @@
     box-sizing: border-box;
     text-decoration: none;
     transition: all .3s ease-out;
+    letter-spacing: 1px;
 }
 
 body {

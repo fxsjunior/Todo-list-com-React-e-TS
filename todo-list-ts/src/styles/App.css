@@ -1,0 +1,93 @@
+.wrapper {
+    max-width: 46rem;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 6.75rem;
+}
+
+.form {
+    /* width: 25rem; */
+    display: flex;
+    gap: 1rem;
+}
+
+.input {
+    width: 37rem;
+    height: 3.375rem;
+    color: var(--gray-200);
+    background: var(--gray-400);
+    border: 1px solid transparent;
+    padding: 1rem;
+}
+
+.input:hover {
+    border: 1px solid var(--blue-500);
+}
+
+.botaoCriar {
+    display: flex;
+    align-items: center;
+    padding: .9rem;
+    border: 1px solid transparent;
+    background: var(--gray-700);
+    color: var(--blue-100);
+    gap: .4rem;
+    transition: 1s;
+}
+
+.botaoCriar:hover {
+    box-shadow: 0 0 0 1px transparent;
+    background: var(--blue-600);
+}
+
+.botaoCriar:focus {
+    box-shadow: 0 0 0 1px var(--blue-600);
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    width: 44rem;
+    padding-top: 4.4rem;
+}
+
+.tarefas {
+    height: 1.18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+}
+
+.empty-task {
+    padding-top: 4.25rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+
+
+@media (max-width:768) {
+    html {
+
+    }
+}
