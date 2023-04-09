@@ -4,26 +4,32 @@ import emptyTask from './assets/empty.tasks.svg.svg'
 import { VscAdd } from "react-icons/vsc";
 import { BsCircle } from "react-icons/bs";
 import { BsTrash3Fill } from "react-icons/bs";
+import { BsCheckCircle } from "react-icons/bs";
+import { MdDelete } from 'react-icons/md';
+import { Header } from './components/Header';
+
 
 
 export function App() {
-  const addTask = () => {
+  const addTask = (e: any) => {
+    e.preventDefault()
     console.log("fui clicado")
+  }
+
+  function deleteTask() {
+    console.log("fui dele")
   }
 
   return (
     <div className="App">
       <div className='wrapper'>
-        <header className='header'>
-          <img src={todoLogo} alt='Logo todo lsit' />
-        </header>
+        <Header />
 
         <main className='main'>
           <form action="" className='form'>
             <input type="text" placeholder='Adicione uma nova tarefa' className='input' />
-            <button type='submit' className='botaoCriar' onClick={() => addTask} >Criar <VscAdd size={20} /></button>
+            <button type='submit' className='botaoCriar' onClick={addTask} >Criar <VscAdd size={20} /></button>
           </form>
-
 
 
           <div className="task-container">
@@ -45,13 +51,18 @@ export function App() {
             </div>
           </div>
 
-          <div className="tasks_list">
+          <div className="tasks-list">
             <div className="task">
-              <div>
+              <div className='task-description'>
                 <BsCircle />
-                <p>Dar banho nos cachorros</p>
+                <p>Dar banho nos cachorros </p>
               </div>
-              <BsTrash3Fill />
+              <button
+                type='button'
+                className='remove'
+                onClick={deleteTask}>
+                <BsTrash3Fill size={24} />
+              </button>
             </div>
           </div>
 
