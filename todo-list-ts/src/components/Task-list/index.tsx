@@ -1,8 +1,13 @@
 import { BsCircle } from "react-icons/bs";
 import { BsTrash3Fill } from "react-icons/bs";
 import './styles.css'
+import { ITask } from "../Interfaces";
 
-const ListTask = () => {
+interface TaskProps {
+    task: ITask
+}
+
+const ListTask = ({task}: TaskProps) => {
 
     function deleteTask() {
         console.log("fui dele")
@@ -13,7 +18,7 @@ const ListTask = () => {
             <div className="task">
                 <div className='task-description'>
                     <BsCircle />
-                    <p>Dar banho nos cachorros </p>
+                    <p>{task.description}</p>
                 </div>
                 <button
                     type='button'

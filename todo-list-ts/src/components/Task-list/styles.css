@@ -1,6 +1,6 @@
 .tasks-list {
     width: 44rem;
-  
+    padding-top: 1rem;
     display: flex;
     flex-direction: column;
   }
