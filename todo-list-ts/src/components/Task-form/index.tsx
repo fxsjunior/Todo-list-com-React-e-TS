@@ -4,7 +4,8 @@ import { useState } from "react";
 import { ITask } from "../Interfaces";
 import ListTask from "../Task-list";
 
-
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
 
 const TaskInput = () => {
 
@@ -12,15 +13,29 @@ const TaskInput = () => {
 
     const [todoList, setTodoList] = useState<ITask[]>([]) // guardar as tasks criada, para tipar esse state é preciso crair uma interface
 
-    function addTask(e: any) {
+    function addTask(e: any): void {
         e.preventDefault()
-        const idRandom = (num: number) => Math.floor(Math.random() * num)
+        if (task === "") {
+            toast.error('Digite alguma task')
+        } else {
+
+            const idRandom = (num: number) => Math.floor(Math.random() * num)
 
 
-        const newTask = { id: idRandom(999999999999), description: task }
+            const newTask = { id: idRandom(999999999999), description: task }
 
-        setTodoList([...todoList, newTask])
+            setTodoList([...todoList, newTask])
+
+            toast.success("Task cadastrada com sucesso!")
+            setTask('')
+        }
     }
+
+    function removeTask(deleteTask: number): void {
+        setTodoList(todoList.filter(taskName => taskName.id !== deleteTask))
+    }
+
+    
 
     return (
         <>
@@ -30,7 +45,7 @@ const TaskInput = () => {
 
             </form>
             {todoList.map((task, key) => (
-                <ListTask key={key} task={task} />
+                <ListTask key={key} task={task} deleteTask={removeTask} />
             ))}
         </>
     );

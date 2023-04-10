@@ -4,14 +4,12 @@ import './styles.css'
 import { ITask } from "../Interfaces";
 
 interface TaskProps {
-    task: ITask
+    task: ITask,
+    deleteTask(DeleteTaskId: number): void //void pq não retorna nada
 }
 
-const ListTask = ({task}: TaskProps) => {
+const ListTask = ({task, deleteTask}: TaskProps) => {
 
-    function deleteTask() {
-        console.log("fui dele")
-    }
 
     return (
         <div className="tasks-list">
@@ -23,7 +21,7 @@ const ListTask = ({task}: TaskProps) => {
                 <button
                     type='button'
                     className='remove'
-                    onClick={deleteTask}>
+                    onClick={() => deleteTask(task.id)}>
                     <BsTrash3Fill size={24} />
                 </button>
             </div>
