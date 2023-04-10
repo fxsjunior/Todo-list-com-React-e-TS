@@ -1,0 +1,6 @@
+.empty-task {
+  padding: 2.25rem 0px;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}

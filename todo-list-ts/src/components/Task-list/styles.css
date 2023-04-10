@@ -1,0 +1,33 @@
+.tasks-list {
+    width: 44rem;
+  
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .task {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    background: var(--gray-400);
+    border-radius: 8px;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  
+  .task-description {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 39rem;
+  }
+  
+  .remove {
+      background: transparent;
+      color: var(--gray-700);
+      border: none;
+  }
+  
+  .remove:hover {
+      color: var(--red-500);
+  }

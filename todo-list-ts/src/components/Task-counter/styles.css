@@ -1,0 +1,14 @@
+.task-container {
+    display: flex;
+    justify-content: space-between;
+    width: 44rem;
+    padding-top: 4.4rem;
+  }
+  
+  .tarefas {
+    height: 1.18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
